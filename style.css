@@ -1,0 +1,201 @@
+html {
+	font-size: calc(15px + 0.390625vw);
+	touch-action: manipulation;
+	height: 100%;
+}
+
+body {
+	color: white;
+	font-family: "IBM Plex Mono", monospace;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: none; /* Ensures no background from CSS */
+	--dot-color: rgb(207, 207, 207);
+	--background-1: #1F2122;
+	--background-2: #3f3f3f;
+	
+	background: radial-gradient(var(--dot-color) 3%, transparent 3%), radial-gradient(circle at var(--mouse-x, 100%) var(--mouse-y, 0%), var(--background-2) 0%, var(--background-1));
+	background-size: 70px 70px, 100% 100%;
+}
+
+.page-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.page-container > * {
+	width: 60%;
+	min-height: 15vh;
+}
+
+.page-container > .title-container {
+	width: 100%;
+}
+
+.name {
+	width: min-content;
+	margin: 0 30px;
+	font-size: 7rem;
+}
+
+.list {
+	margin-left: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.list > * {
+	margin: 10px 20px;
+	font-size: 1.5rem;
+}
+
+.subheading {
+	font-size: 3rem;
+	margin: 15px;
+}
+
+a {
+	font-weight: 300;
+	text-decoration: none;
+	color: white;
+	background: var(--link-background, white) 0% 101% / var(--x, 0) no-repeat text;
+	background-color: white;
+	-webkit-text-fill-color: transparent;
+	transition: 0.5s ease-in-out;
+}
+
+a:hover, a.animate {
+	--x: 100%
+}
+
+a#github {
+	--link-background: linear-gradient(to right, #212221 17%, #e4ece8 17% 34%, #171b19 34% 51%, #e4f0e7 51% 68%,#151615 68%);
+}
+
+a#steam {
+	--link-background: linear-gradient(to right, #207b9c 50%, #000000 50% 75%, #FFFFFF 75%);
+}
+a#kaggle {
+	--link-background: linear-gradient(to right, #20BEFF 50%, #F2F2F2 50%);
+}
+a#linkedin {
+	--link-background: linear-gradient(to right, #0077B5 50%, #FFFFFF 50%);
+}
+
+a#email {
+	--link-background: linear-gradient(to right, #4285F4 20%, #bb001b 20% 40%, #EA4335 40% 60%, #FBBC05 60% 80%, #34A853 80%)
+}
+
+a#sql {
+	--link-background: linear-gradient(to right, #3860e4 50%, #eb9646 50%);
+}
+
+
+a#js {
+	--link-background: linear-gradient(to right, #F2DB1C 40%, #FFFFFF 40%);
+}
+
+a#py {
+	--link-background: linear-gradient(to right, #356D9D 33%, #FBCE3D 33%);
+}
+
+a#nodejs {
+	--link-background: linear-gradient(to right, #8CC84B 25%, #3C873A 25% 50%, #8CC84B 50% 75%, #3C873A 75%);
+}
+
+a#tensorflow {
+	--link-background: linear-gradient(to right, #FF6F00 25%, #E65100 25% 50%, #FF6F00 50% 75%, #E65100 75%);
+}
+
+a#express {
+	--link-background: linear-gradient(to right, #000000 25%, #787878 25% 50%, #000000 50% 75%, #787878 75%);
+}
+
+a#opencv {
+	--link-background: linear-gradient(to right, #e86e3e 25%, #37dd45 25% 50%, #399fda 75%);
+}
+a#docker {
+	--link-background: linear-gradient(to right, #2496ED 50%, #dddddd 50%);
+}
+a#streamlit {
+	--link-background: linear-gradient(to right, #f83535 25%, #ff8800 25% 50%, #d84d4d 50% 75%, #ff8800 75%);
+}
+a#linux {
+	--link-background: linear-gradient(to right, #F7DC6F 33%, #FFFFFF 33% 66%, #000000 66%);
+}
+
+
+
+a#movie-recommender {
+	--link-background: linear-gradient(to right, #FFC312 20%, #EE5A24 20% 40%, #00A8FF 40% 60%, #9980FA 60% 80%, #12CBC4 80%);
+}
+a#static-analysis-app {
+	--link-background: linear-gradient(to right, #532be4 25%, #7927b0 25% 50%, #c4599b 50% 75%, #9954e7 75%);
+}
+a#vulnerability-scanner {
+	--link-background: linear-gradient(to right, #FF5733 25%, #C70039 25% 50%, #0c901e 50% 75%, #325818 75%);
+}
+a#virtual-control {
+	--link-background: linear-gradient(to right, #a8ff07 25%, #ec6dad 25% 50%, #f19238 50% 75%, #af69ff 75%);
+}
+
+a#interpreter-python {
+	--link-background: linear-gradient(to right, #1cd635 25%, #05c9c9 25% 50%, #1cd635 50% 75%, #07caba 75%);
+}
+
+
+
+@media only screen and (pointer: none), only screen and (pointer: coarse) {
+	body {
+		background: radial-gradient(var(--dot-color) 3%, transparent 3%), var(--background-1);
+		background-size: 70px 70px;
+	}
+
+}
+
+@media only screen and (max-width: 900px) {	
+	.page-container > * {
+		width: 100%;
+		min-height: 0;
+	}
+	
+	.name {
+		width: min-content;
+		margin: 0 10px;
+		font-size: 5rem;
+	}
+	
+	.list {
+		margin-left: 20px;
+	}
+	
+	.list > * {
+		margin: 5px 20px 5px 0px;
+		font-size: 1.5rem;
+	}
+	
+	.subheading {
+		font-size: 2.5rem;
+		margin: 5px 15px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.name {
+		font-size: 3.5rem;
+	}
+
+}
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensures it stays in the background */
+}
